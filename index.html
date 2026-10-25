@@ -643,7 +643,7 @@ function toast(t){const e=$("toast");e.textContent=t;e.classList.add("show");cle
 let sb=null,user=null;
 try{if(CFG.url&&CFG.key&&window.supabase)sb=window.supabase.createClient(CFG.url,CFG.key);}catch(e){sb=null;}
 const BUCKET="pgn",gone=new Set();let mtimer=null;
-const mail=u=>u.toLowerCase()+"@users.opening-trainer.app";
+const mail=u=>u.toLowerCase()+"@"+(CFG.domain||"gmail.com");
 const setSync=t=>{$("syncSt").textContent=t;};
 const fpath=id=>user.id+"/"+id+".pgn";
 const blob=(t,ty)=>new Blob([t],{type:ty||"text/plain"});
